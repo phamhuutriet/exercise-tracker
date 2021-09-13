@@ -1,0 +1,121 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "extends": ["standard", "standard-react"],
+  "rules": {
+    "camelcase": "off",
+    "standard/no-callback-literal": "off",
+    "curly": "off",
+    "no-var": "error",
+    "no-case-declarations": "error",
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "jsx-quotes": ["off"],
+    "semi": ["off"],
+    "quotes": ["off"],
+    "no-useless-return": ["off"],
+    "generator-star-spacing": ["off"],
+    "space-before-function-paren": ["off"],
+    "no-unneeded-ternary": ["off"],
+    "indent": ["off"],
+    "react/jsx-closing-bracket-location": "error",
+    "react/jsx-closing-tag-location": "error",
+    "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
+    "react/jsx-handler-names": [
+      "error",
+      {
+        "eventHandlerPrefix": "_?on"
+      }
+    ],
+    "react/jsx-max-props-per-line": [
+      "error",
+      {
+        "maximum": 1,
+        "when": "multiline"
+      }
+    ],
+    "react/jsx-no-bind": [
+      "error",
+      {
+        "allowArrowFunctions": true,
+        "allowBind": false,
+        "ignoreRefs": true
+      }
+    ],
+    "react/jsx-key": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-literals": "off",
+    "react/jsx-pascal-case": "error",
+    "react/jsx-tag-spacing": [
+      "error",
+      {
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never"
+      }
+    ],
+    "react/jsx-wrap-multilines": "error",
+    "react/no-multi-comp": [
+      "error",
+      {
+        "ignoreStateless": true
+      }
+    ],
+    "react/no-redundant-should-component-update": "error",
+    "react/no-string-refs": "error",
+    "react/no-unescaped-entities": "error",
+    "react/no-unused-prop-types": "error",
+    "react/no-will-update-set-state": "error",
+    "react/prop-types": [
+      "error",
+      {
+        "skipUndeclared": true
+      }
+    ],
+    "react/prefer-es6-class": ["error", "always"],
+    "react/require-render-return": "error",
+    "react/boolean-prop-naming": "warn",
+    "react/forbid-prop-types": "warn",
+    "react/no-children-prop": "warn",
+    "react/no-deprecated": "warn"
+  },
+  "globals": {
+    "describe": true,
+    "it": true,
+    "expect": true,
+    "fetch": true,
+    "navigator": true,
+    "__DEV__": true,
+    "XMLHttpRequest": true,
+    "FormData": true,
+    "React$Element": true,
+    "localStorage": true,
+    "caches": true,
+    "cy": true
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect",
+      "flowVersion": "0.53"
+    }
+  }
+}
