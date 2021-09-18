@@ -23,7 +23,7 @@ export class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/users')
+    axios.get('https://secure-river-28564.herokuapp.com/users')
     .then(res => {
       if (res.data.length > 0) {
         this.setState({
@@ -58,7 +58,7 @@ export class CreateExercise extends Component {
     });
   }
 
-  onSubmit(e) {
+  onSubmit= async (e) =>  {
     e.preventDefault();
 
     const exercises = {
@@ -70,8 +70,8 @@ export class CreateExercise extends Component {
 
     console.log(exercises);
 
-    axios
-      .post("http://localhost:5000/exercises/add", exercises)
+    await axios
+      .post("https://secure-river-28564.herokuapp.com/add", exercises)
       .then((res) => console.log(res.data));
 
     window.location = "/";

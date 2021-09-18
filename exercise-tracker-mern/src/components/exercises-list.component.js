@@ -9,7 +9,7 @@ const Exercise = props => (
     <td>{props.exercise.duration}</td>
     <td>{props.exercise.date.substring(0,10)}</td>
     <td>
-      <Link to={`/edit/${props.exercise._id}`}>edit</Link> | <a href="#" onClick={() => props.deleteExercise(props)}>delete</a>
+      <Link to={`/edit/${props.exercise._id}`}>edit</Link> | <a href="#" onClick={() => props.deleteExercise(props.exercise._id)}>delete</a>
     </td>
   </tr>
 )
@@ -29,7 +29,7 @@ export class ExercisesList extends Component {
   // Render once at the beginning and update all exercises into a list
   componentDidMount() {
     axios
-      .get("http://localhost:5000/exercises")
+      .get("https://secure-river-28564.herokuapp.com/exercises")
       .then((res) => {
         this.setState({ exercise: res.data });
       })
@@ -38,7 +38,7 @@ export class ExercisesList extends Component {
 
   deleteExercise(id) {
     axios
-      .delete("http://localhost:5000/exercises")
+      .delete("https://secure-river-28564.herokuapp.com/exercises")
       .then((res) => console.log(res.data));
 
     this.setState({

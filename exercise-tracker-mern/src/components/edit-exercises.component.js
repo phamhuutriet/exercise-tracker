@@ -24,7 +24,7 @@ export class EditExercise extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:5000/exercises/${this.props.match.params.id}`)
+      .get(`https://secure-river-28564.herokuapp.com/exercises/${this.props.match.params.id}`)
       .then((res) => {
         this.setState({
           username: res.data.username,
@@ -35,7 +35,7 @@ export class EditExercise extends Component {
       })
       .catch((err) => console.log(err));
 
-    axios.get("http://localhost:5000/users").then((res) => {
+    axios.get("https://secure-river-28564.herokuapp.com/users").then((res) => {
       if (res.data.length > 0) {
         this.setState({
           users: res.data.map((user) => user.username),
@@ -69,7 +69,7 @@ export class EditExercise extends Component {
     });
   }
 
-  onSubmit(e) {
+  onSubmit = async (e) => {
     e.preventDefault();
 
     const exercises = {
@@ -81,8 +81,8 @@ export class EditExercise extends Component {
 
     console.log(exercises);
 
-    axios
-      .post(`http://localhost:5000/exercises/update/${this.props.match.params.id}`, exercises)
+    await axios
+      .post(`https://secure-river-28564.herokuapp.com/exercises/update/${this.props.match.params.id}`, exercises)
       .then((res) => console.log(res.data));
 
     window.location = "/";

@@ -19,7 +19,7 @@ export class CreateUser extends Component {
     });
   }
 
-  onSubmit(e) {
+  onSubmit = async (e) => {
     e.preventDefault();
 
     const user = {
@@ -28,8 +28,8 @@ export class CreateUser extends Component {
 
     console.log(user);
 
-    axios
-      .post("http://localhost:5000/users/add", user)
+    await axios
+      .post("https://secure-river-28564.herokuapp.com/add", user)
       .then((res) => console.log(res.data));
 
     this.setState({
